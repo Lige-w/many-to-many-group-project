@@ -15,18 +15,18 @@ puts "~does trek have a bike built?~"
 puts brand1.bikes_built.length == 1 #true
 puts "---"
 puts "does trek have one bike for sale?"
-puts brand1.for_sale.length == 1 #true
+puts brand1.bikes_available.length == 1 #true
 puts "---"
 puts "is there one instance of bike?"
 puts Bike.all.length == 1 #true
 puts "---"
 puts"is the bikes brand brand1"
 puts Bike.all[0].brand == brand1
----
+puts"---"
 
 #buy a bike
 
-shop.buy_bike(trek, 0)
+shop1.buy_bike(brand1, 0)
 
 puts "is the bike owned by the shop"
 puts Bike.all[0].shop == shop1 #true
@@ -35,5 +35,8 @@ puts "does shop1 own one bike?"
 puts shop1.bikes_owned.length == 1
 puts "---"
 puts "is the bike no longer for sale by brand1?"
-puts brand.for_sale.length == 0
+puts brand1.bikes_available.length == 0
+puts "---"
+puts "does shop1 own bikes from brand 1?"
+puts shop1.brands_owned.include?(brand1)
 

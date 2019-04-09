@@ -24,7 +24,7 @@ class Brand
     Bike.all.select { |bike| bike.brand == self }
   end
 
-  def for_sale
+  def bikes_available
     bikes_built.select { |bike| bike.shop.nil? }
   end
 

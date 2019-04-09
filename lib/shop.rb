@@ -20,7 +20,7 @@ class Shop
   # Shop can change price (ie. put bike on sale)
 
   def buy_bike(brand, index)
-    new_bike = brand.for_sale[index]
+    new_bike = brand.bikes_available[index]
     # binding.pry
     new_bike.shop = self
   end
@@ -30,7 +30,7 @@ class Shop
   end
 
   def brands_owned
-    bikes_owned.map { |bike| bike}
+    bikes_owned.map { |bike| bike.brand }.uniq
   end
 
   # def sell_bike()
